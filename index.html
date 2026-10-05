@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7f3">
+  <meta name="description" content="A tiny launch board for testing the path from idea to GitHub to Android.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Shipshape — a tiny launch board</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Shipshape home"><span class="brand-mark">↗</span> shipshape<span class="brand-dot">.</span></a>
+    <div class="top-actions"><span class="saved"><i></i> Saved on this device</span><button class="icon-button" id="installButton" hidden>Install app <span>↓</span></button><button class="avatar" aria-label="Your workspace">Y</button></div>
+  </header>
+  <main id="top">
+    <section class="intro">
+      <div><p class="eyebrow"><span class="spark">✳</span> YOUR FIRST SHIP</p><h1>From idea to<br><span>in your hands.</span></h1><p class="lede">A tiny board to test the whole loop: sketch in Chat, push to GitHub, then open it on Android.</p></div>
+      <div class="progress-card"><div class="progress-head"><span>Launch progress</span><strong id="progressLabel">0 of 6</strong></div><div class="progress-track"><div id="progressBar"></div></div><div class="progress-foot"><span>One small step at a time</span><span class="progress-icon">✦</span></div></div>
+    </section>
+
+    <section class="workspace">
+      <div class="section-heading"><div><p class="eyebrow">THE WORKFLOW</p><h2>Your launch board</h2></div><button class="reset-button" id="resetButton">Reset demo <span>↺</span></button></div>
+      <div class="flowline" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="columns">
+        <section class="column chat-column"><div class="column-title"><span class="step-icon chat-icon">✳</span><div><p>01 / MAKE</p><h3>Chat Work</h3></div><span class="column-count" id="countChat">0/2</span></div>
+          <article class="task" data-task="idea"><button class="check" aria-label="Mark idea shaped complete"></button><div><h4>Shape the idea</h4><p>Describe a tiny app you can finish in an afternoon.</p></div><span class="tag tag-peach">Idea</span></article>
+          <article class="task" data-task="build"><button class="check" aria-label="Mark app built complete"></button><div><h4>Build the first version</h4><p>Keep it focused. Make the main action feel good.</p></div><span class="tag tag-peach">Build</span></article>
+          <div class="column-note"><span>✎</span> Chat is your sketchbook and pair programmer.</div>
+        </section>
+        <section class="column github-column"><div class="column-title"><span class="step-icon github-icon">⌘</span><div><p>02 / SHARE</p><h3>GitHub</h3></div><span class="column-count" id="countGithub">0/2</span></div>
+          <article class="task" data-task="repo"><button class="check" aria-label="Mark repository created complete"></button><div><h4>Create a repository</h4><p>Give your app a home and a history.</p></div><span class="tag tag-lilac">Repo</span></article>
+          <article class="task" data-task="push"><button class="check" aria-label="Mark first push complete"></button><div><h4>Make your first push</h4><p>Commit the app, then let Actions publish it.</p></div><span class="tag tag-lilac">Push</span></article>
+          <div class="column-note"><span>⌘</span> A safe place to save, share, and ship changes.</div>
+        </section>
+        <section class="column android-column"><div class="column-title"><span class="step-icon android-icon">▣</span><div><p>03 / SHIP</p><h3>Android</h3></div><span class="column-count" id="countAndroid">0/2</span></div>
+          <article class="task" data-task="deploy"><button class="check" aria-label="Mark deployment complete"></button><div><h4>Deploy the app</h4><p>Publish the web app from your GitHub repo.</p></div><span class="tag tag-green">Deploy</span></article>
+          <article class="task" data-task="install"><button class="check" aria-label="Mark Android install complete"></button><div><h4>Install on Android</h4><p>Open the link in Chrome and add it to Home screen.</p></div><span class="tag tag-green">Android</span></article>
+          <div class="column-note"><span>↗</span> A real app icon, right there on your phone.</div>
+        </section>
+      </div>
+    </section>
+    <section class="next-step"><div class="next-mark">✦</div><div><p class="eyebrow">YOUR NEXT MOVE</p><h2>Start with the smallest useful thing.</h2><p>Try changing the checklist, then push it to GitHub Pages. This board saves your progress on this device.</p></div><a href="#guide" class="arrow-link" aria-label="Read the quick start">↗</a></section>
+    <section class="guide" id="guide"><div><p class="eyebrow">QUICK START</p><h2>Take it for a spin</h2></div><ol><li><b>01</b><span>Put this folder in a GitHub repository.</span></li><li><b>02</b><span>Enable Pages from GitHub Actions in repository settings.</span></li><li><b>03</b><span>Open the published link on Android Chrome, then choose <em>Install app</em> or <em>Add to Home screen</em>.</span></li></ol></section>
+    <footer><a class="brand" href="#top"><span class="brand-mark">↗</span> shipshape<span class="brand-dot">.</span></a><span>A little app with a full-size workflow.</span><span>Made for the next idea <b>✳</b></span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
